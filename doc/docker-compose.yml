@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: passpass
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./wp-content:/var/www/html/wp-content/
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: user
+      MYSQL_PASSWORD: passpass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+
+#  pma:
+#    image: phpmyadmin/phpmyadmin
+#    ports:
+#      - 8081:80

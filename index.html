@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Alice Giordani using Boostrap">
+    <title>Développement sur Worpress · Support de cours</title>
+    <link href="bootstrap/bootstrap.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/jumbotron.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">3ESGI IW</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#plan">Déroulé du cours</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#install">Installation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#refs">Références</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<main role="main">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Développement sur Wordpress</h1>
+      <p>L'objectif de ce cours est de maîtriser les spécificités du CMS <a href="https://wordpress.org/" target="_blank">Wordpress</a> afin que vous puissiez créer vos propres thèmes et plugins.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row" id="plan">
+      <div class="col-md-12">
+        <h2>Déroulé du cours</h2>
+        <ol>
+          <li>
+            Introduction
+          </li>
+            <ul>
+              <li>
+                Installation via Docker
+              </li>
+              <li>
+                Découverte du CMS - Les bases à connaitre
+              </li>
+            </ul>
+          <li>
+            B-A BA du thème
+          </li>
+            <ul>
+              <li>
+                Les bases de création d'un thème
+              </li>
+              <li>
+                Hiérarchie de Wordpress
+              </li>
+              <li>
+                Héritage de thème
+              </li>
+              <li>
+                Conditional & Template Tags
+              </li>
+            </ul>
+          <li>
+            Structurer son thème
+          </li>
+            <ul>
+              <li>
+                Créer des zones de menus + sidebars
+              </li>
+              <li>
+                Options personnalisables dans l'admin
+              </li>
+            </ul>
+
+          <span>Contrôle continu : Appliquer les bases en créant son thème personnalisé</span>
+
+          <li>
+            Ajouter de nouvelles fonctionnalités
+          </li>
+            <ul>
+              <li>
+                Créer de nouveaux types de contenus
+              </li>
+              <li>
+                Créer un widget personnalisé
+              </li>
+              <li>
+                Initialiser un plugin
+              </li>
+              <li>
+                les shortcodes
+              </li>
+            </ul>
+          <li>
+            Améliorer l'expérience utilisateur
+          </li>
+            <ul>
+              <li>
+                Ajouter des options du template/module dans l’admin
+              </li>
+            </ul>
+          <span>Evaluation finale : Développement d'un plugin sur mesure (en groupe) + Oral</span>
+        </ol>
+      </div>
+    </div>
+    <hr>
+    <div class="row" id="install">
+      <h2>Installation via Docker Compose</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>1. Config</h3>
+        <p>Utiliser ce fichier <br><a class="btn btn-secondary" href="doc/docker-compose.yml" target="_blank" role="button">docker-compose.yml</a></p>
+      </div>
+      <div class="col-md-4">
+        <h3>2. depuis le Terminal</h3>
+        <p>Executer la commande <br><kbd>sudo docker-compose up</kbd></p>
+      </div>
+      <div class="col-md-4">
+        <h3>3. depuis l'installeur Wordpress</h3>
+        <p>Finir l'installation de Wordpress, via son installeur, directement depuis le navigateur avec l'url localhost:port</p>
+      </div>
+    </div>
+    <div class="row">
+      <h3>Important : Réglages complémentaires</h3>
+    </div>
+    <ol>
+      <li>
+        pour avoir les droits sur les fichiers créées lors de l'installation dans le dossier courant 
+      </li>
+        <ul>
+          <li>
+            <kbd>sudo chown -R [user:group] [chemin du dossier]</kbd>
+          </li>
+        </ul>
+      <li>
+        pour créér un thème/plugin, créer le dossier en ligne de commande
+      </li>
+        <ul>
+          <li>
+            <kbd>sudo cp -r [chemin du theme existant/téléchargé] [chemin du dossier de thème du WP]</kbd><br>
+            ou<br>
+            <kbd>sudo mkdir wp-content/theme/[nom du thème à créer]</kbd>
+          </li>
+        </ul>
+      <li>
+        et se redonner les droits d'édition de ce dossier
+      </li>
+        <ul>
+          <li>
+            <kbd>sudo chown -R [user:group] [chemin du dossier]</kbd>
+          </li>
+        </ul>
+      <li>
+        Enfin, pour avoir accès à la base de données, installer PHPmyAdmin
+      </li>
+        <ul>
+          <li>
+            ajouter "pma: ..." dans le docker-compose.yml (cf fichier/lignes en commentaires)<br>
+            attention, bien mettre un port différent de celui de WP
+          </li>
+        </ul>
+    </ol>
+    
+     
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>©AG 2019</p>
+</footer>
+<script src="bootstrap/jquery-3.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap/bootstrap.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+</body></html>
