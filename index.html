@@ -39,10 +39,9 @@
       <p>L'objectif de ce cours est de maîtriser les spécificités du CMS <a href="https://wordpress.org/" target="_blank">Wordpress</a> afin que vous puissiez créer vos propres thèmes et plugins.</p>
     </div>
   </div>
-
-  <div class="container">
+  <div class="container" id="plan">
     <!-- Example row of columns -->
-    <div class="row" id="plan">
+    <div class="row" >
       <div class="col-md-12">
         <h2>Déroulé du cours</h2>
         <ol>
@@ -86,7 +85,7 @@
               </li>
             </ul>
 
-          <span>Contrôle continu : Appliquer les bases en créant son thème personnalisé</span>
+          <u>Contrôle continu : Appliquer les bases en créant un thème personnalisé</u>
 
           <li>
             Ajouter de nouvelles fonctionnalités
@@ -113,12 +112,12 @@
                 Ajouter des options du template/module dans l’admin
               </li>
             </ul>
-          <span>Evaluation finale : Développement d'un plugin sur mesure (en groupe) + Oral</span>
+          <u>Évaluation finale : Développement d'un plugin sur mesure (en groupe) + Oral</u>
         </ol>
       </div>
     </div>
-    <hr>
-    <div class="row" id="install">
+    <hr id="install">
+    <div class="row" >
       <h2>Installation via Docker Compose</h2>
     </div>
     <div class="row">
@@ -128,7 +127,7 @@
       </div>
       <div class="col-md-4">
         <h3>2. depuis le Terminal</h3>
-        <p>Executer la commande <br><kbd>sudo docker-compose up</kbd></p>
+        <p>Éxécuter la commande <br><kbd>sudo docker-compose up</kbd></p>
       </div>
       <div class="col-md-4">
         <h3>3. depuis l'installeur Wordpress</h3>
@@ -148,20 +147,14 @@
           </li>
         </ul>
       <li>
-        pour créér un thème/plugin, créer le dossier en ligne de commande
+        pour créér un thème/plugin, créer le dossier avec les droits pour l'éditer
       </li>
         <ul>
           <li>
             <kbd>sudo cp -r [chemin du theme existant/téléchargé] [chemin du dossier de thème du WP]</kbd><br>
             ou<br>
-            <kbd>sudo mkdir wp-content/theme/[nom du thème à créer]</kbd>
-          </li>
-        </ul>
-      <li>
-        et se redonner les droits d'édition de ce dossier
-      </li>
-        <ul>
-          <li>
+            <kbd>sudo mkdir wp-content/theme/[nom du thème à créer]</kbd><br>
+            et<br>
             <kbd>sudo chown -R [user:group] [chemin du dossier]</kbd>
           </li>
         </ul>
@@ -176,7 +169,40 @@
         </ul>
     </ol>
     
-     
+    <hr>
+
+    <div class="row" id="refs">
+      <h2>Références</h2>
+      <h3>(RTFM!)</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Docker</h4>
+        <ul>
+          <li>
+            <a href="https://hub.docker.com/_/wordpress/" target="_blank">https://hub.docker.com/_/wordpress/</a>
+          </li>
+          <li>
+            <a href="https://hub.docker.com/r/phpmyadmin/phpmyadmin/" target="_blank">https://hub.docker.com/r/phpmyadmin/phpmyadmin/</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h4>Wordpress</h4>
+        <ul>
+          <li>
+            <a href="https://developer.wordpress.org/reference/" target="_blank">Documentation générale</a>
+          </li>
+          <li>
+            <a href="https://developer.wordpress.org/themes/" target="_blank">Développer son propre thème</a>
+          </li>
+          <li>
+            <a href="https://developer.wordpress.org/plugins/" target="_blank">Développer son propre plugin</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <hr>
 
   </div> <!-- /container -->
